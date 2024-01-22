@@ -1,5 +1,8 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
+
+app.use(cors()); // CORS 미들웨어 추가
 
 const animalSounds = {
   dog: '멍멍',
@@ -18,7 +21,7 @@ app.get('/animal-sound/:animal_name', (req, res) => {
   }
 });
 
-const port = 80;
+const port = 3000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
